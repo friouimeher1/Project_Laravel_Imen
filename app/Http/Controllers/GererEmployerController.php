@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Employer;
 class GererEmployerController extends Controller
 {
     /**
@@ -13,7 +13,9 @@ class GererEmployerController extends Controller
      */
     public function index()
     {
-        //
+        $employer =Employer::all();
+        //dd($employer);
+        return view('admin.employer.index',compact('employer'));
     }
 
     /**
